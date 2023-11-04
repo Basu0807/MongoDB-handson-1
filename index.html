@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MondoDB Handson-1</h1>
+    <h2>Create a database , give it name like "Human_Resource". Create a collection inside this named "employee"</h2>
+    <h3>Q-1 Query the collection "employee" and list all the documents</h3>
+    <ol>
+        <li>use Human_Resource</li>
+        <li>db.employee.find({})</li>
+    </ol>
+    <h3>Q-2 Query the collection "employee" and list the employees who are having salary more than 30000</h3>
+    <ol>
+        <li>use Human_Resource</li>
+        <li>db.employee.find({salary:{$gt:"30000"}})</li>
+    </ol>
+    <h3>Q-3 Query the collection "employee" and list the employees who are having experience more than 2 years.</h3>
+    <ol>
+        <li>use Human_Resource</li>
+        <li>db.employee.find({overallExp:{$gt:"2"}})</li>
+        <p>No one has experience more than 2 years</p>
+    </ol>
+    <h3>Q-4 Query the collection "employee" and list the employees who are graduated after 2015 and having experience more than 1 year.</h3>
+    <ol>
+        <li>use Human_Resource</li>
+        <li>db.employee.find({yearGrad:{$gt:"2015"},overallExp:{$gt:"1"}})</li>
+    </ol>
+    <h3>Q-5 Query the collection "employee" and update the salary of the employee whose salary is greater than 70000 to 65000.</h3>
+    <ol>
+        <li>use Human_Resource</li>
+        <li>db.employee.updateMany({salary:{$gt:"70000"}},{$set:{salary:"65000"}})</li>
+        <p>No one has salary more than 70000</p>
+    </ol>
+    <h3>Q-6 Delete all the documents from "employee" where last company is Y.</h3>
+    <ol>
+        <li>use Human_Resource</li>
+        <li>db.employee.deleteMany({lastCompany: 'Y'})</li>
+        <p>Delete 6 documents from "employee" where last company is Y</p>
+    </ol>
+
+
+</body>
+</html>
